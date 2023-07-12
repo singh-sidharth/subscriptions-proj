@@ -2,11 +2,11 @@
 	"name": "subscription-backend",
 	"version": "1.0.0",
 	"description": "Project to implement subscriptions messaging.",
-	"main": "app.js",
+	"main": "dist/app.js",
 	"scripts": {
 		"dev": "nodemon",
 		"make": "rmdir /s /q dist && npx tsc -p tsconfig.json",
-		"start": "node .",
+		"start": "cd dist && node .",
 		"prod": "NODE_ENV=production node .",
 		"test": "test"
 	},
@@ -30,6 +30,10 @@
 		"typescript": "^5.1.6"
 	},
 	"dependencies": {
+		"body-parser": "^1.20.2",
+		"compression": "^1.7.4",
+		"cookie-parser": "^1.4.6",
+		"cors": "^2.8.5",
 		"dotenv": "^16.3.1",
 		"express": "^4.18.2",
 		"lodash": "^4.17.21",

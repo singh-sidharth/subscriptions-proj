@@ -3,7 +3,7 @@ import {
 	logoutService,
 	loginService,
 	registerService,
-} from "services/authentication.service";
+} from "../services/authentication.service";
 
 export const login = async (req: Request, res: Response) => {
 	loginService(req, res);

@@ -7,6 +7,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import router from "./routers";
+import { getUsers } from "./services/users.db.service";
 
 const app = express();
 
@@ -38,8 +39,8 @@ mongoose.connect(MONGO_URL);
 mongoose.connection.on("error", (error: Error) => {
 	console.log(error);
 });
-mongoose.connection.on("connection", (stream) => {
-	console.log("successfully conncted to db....");
+mongoose.connection.on("connected", (stream) => {
+	console.log("Succesfully connected to MongoDB at", process.env.MONGO_URL);
 });
 
 // app.use(express.urlencoded({ extended: true }));
